@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { updateDoc, doc } from 'firebase/firestore';
@@ -76,7 +76,7 @@ function Profile() {
                 type="text"
                 id="name"
                 className={!changeDetails ? 'profileName' : 'profileNameActive'}
-                disable={!changeDetails}
+                disabled={!changeDetails}
                 onChange={onChange}
                 value={name}
               />
@@ -86,7 +86,7 @@ function Profile() {
                 className={
                   !changeDetails ? 'profileEmail' : 'profileEmailActive'
                 }
-                disable={!changeDetails}
+                disabled={!changeDetails}
                 onChange={onChange}
                 value={email}
               />
